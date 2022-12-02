@@ -12,11 +12,11 @@ export function RedundantStateEasy() {
   };
 
   return (
-    <input
-      style={{ background: isEmailValid ? "white" : "red" }}
-      value={email}
-      onChange={onChangeEmail}
-      placeholder="Email"
-    />
+    <>
+      <input value={email} onChange={onChangeEmail} placeholder="Email" />
+      <div style={{ color: isEmailValid ? "black" : "red" }}>
+        Email is {isEmailValid ? "valid" : "invalid"}
+      </div>
+    </>
   );
 }
