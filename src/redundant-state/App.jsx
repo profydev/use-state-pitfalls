@@ -18,16 +18,16 @@ function App() {
       </TabList>
 
       <TabPanel>
-        <Challenge1.RedundantStateEasy />
+        <Challenge1.EmailInput />
       </TabPanel>
       <TabPanel>
-        <Challenge2.RedundantStateAdvanced />
+        <Challenge2.ListWithSelectableItems />
       </TabPanel>
       <TabPanel>
-        <Solution1.RedundantStateEasy />
+        <Solution1.EmailInput />
       </TabPanel>
       <TabPanel>
-        <Solution2.RedundantStateAdvanced />
+        <Solution2.ListWithSelectableItems />
       </TabPanel>
     </Tabs>
   );

@@ -1,6 +1,9 @@
+// Challenge: Remove the redundant state
+// Difficulty: Advanced
+
 import { useState } from "react";
 
-export function RedundantStateAdvanced() {
+export function ListWithSelectableItems() {
   const [checkedIds, setCheckedIds] = useState([]);
   const [isEveryItemSelected, setIsEveryItemSelected] = useState(false);
   const [numSelected, setNumSelected] = useState(0);

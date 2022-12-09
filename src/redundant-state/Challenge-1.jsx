@@ -1,6 +1,9 @@
+// Challenge: Remove the redundant state
+// Difficulty: Easy
+
 import { useState } from "react";
 
-export function RedundantStateEasy() {
+export function EmailInput() {
   const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(false);
 

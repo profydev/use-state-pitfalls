@@ -1,6 +1,9 @@
+// "isEmailValid" is the redundant state and
+// can directly be derived from "email"
+
 import { useState } from "react";
 
-export function RedundantStateEasy() {
+export function EmailInput() {
   const [email, setEmail] = useState("");
   // in production you'd rather use a validation library like Yup or Zod
   const isEmailValid = !!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);

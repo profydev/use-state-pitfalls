@@ -1,6 +1,9 @@
+// "isEveryItemSelected" and "numSelected" are redundant and
+// can be derived from "checkedIds" directly inside the JSX
+
 import { useState } from "react";
 
-export function RedundantStateAdvanced() {
+export function ListWithSelectableItems() {
   const [checkedIds, setCheckedIds] = useState([]);
 
   const handleChange = (id) => {
