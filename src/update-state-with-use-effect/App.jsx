@@ -14,10 +14,10 @@ function App() {
       </TabList>
 
       <TabPanel>
-        <Challenge.DuplicateState />
+        <Challenge.App />
       </TabPanel>
       <TabPanel>
-        <Solution.DuplicateState />
+        <Solution.App />
       </TabPanel>
     </Tabs>
   );

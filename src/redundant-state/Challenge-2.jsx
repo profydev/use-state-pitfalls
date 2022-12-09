@@ -1,9 +1,10 @@
 // Challenge: Remove the redundant state
 // Difficulty: Advanced
+// Note: This even contains a bug. Can you detect it?
 
 import { useState } from "react";
 
-export function ListWithSelectableItems() {
+function ListWithSelectableItems({ items }) {
   const [checkedIds, setCheckedIds] = useState([]);
   const [isEveryItemSelected, setIsEveryItemSelected] = useState(false);
   const [numSelected, setNumSelected] = useState(0);
@@ -64,6 +65,10 @@ export function ListWithSelectableItems() {
       </ul>
     </>
   );
+}
+
+export function App() {
+  return <ListWithSelectableItems items={items} />;
 }
 
 const items = [

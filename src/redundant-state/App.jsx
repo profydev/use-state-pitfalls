@@ -21,13 +21,13 @@ function App() {
         <Challenge1.EmailInput />
       </TabPanel>
       <TabPanel>
-        <Challenge2.ListWithSelectableItems />
+        <Challenge2.App />
       </TabPanel>
       <TabPanel>
         <Solution1.EmailInput />
       </TabPanel>
       <TabPanel>
-        <Solution2.ListWithSelectableItems />
+        <Solution2.App />
       </TabPanel>
     </Tabs>
   );

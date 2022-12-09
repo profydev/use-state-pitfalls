@@ -1,6 +1,8 @@
+// Challenge: remove the duplicated state from this component.
+
 import { useState } from "react";
 
-export function DuplicateState() {
+function ListWithFilter({ items }) {
   const [filter, setFilter] = useState("TODO");
   const [filteredItems, setFilteredItems] = useState(
     items.filter(({ status }) => status === filter)
@@ -25,6 +27,10 @@ export function DuplicateState() {
       </ul>
     </>
   );
+}
+
+export function App() {
+  return <ListWithFilter items={items} />;
 }
 
 const items = [

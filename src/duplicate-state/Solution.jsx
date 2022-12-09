@@ -1,8 +1,19 @@
+// Solution: The "filteredItems" can be directly
+// derived from "filter" and "items"
+
 import { useState } from "react";
 
-export function DuplicateState() {
+function ListWithFilter({ items }) {
   const [filter, setFilter] = useState("TODO");
   const filteredItems = items.filter(({ status }) => status === filter);
+
+  // Alternative: we can useMemo as well. But note: only
+  // use when you run into performance issues
+  //
+  // const filteredItems = useMemo(
+  //   () => items.filter(({ status }) => status === filter),
+  //   [items, filter]
+  // );
 
   const onChangeFilter = (event) => {
     setFilter(event.target.value);
@@ -21,6 +32,10 @@ export function DuplicateState() {
       </ul>
     </>
   );
+}
+
+export function App() {
+  return <ListWithFilter items={items} />;
 }
 
 const items = [

@@ -1,5 +1,5 @@
-// this code was taken from the React docs
-// https://beta.reactjs.org/learn/choosing-the-state-structure#avoid-deeply-nested-state
+// Solution: introduce references from parent to
+// children via the child's ID.
 
 import { useState } from "react";
 

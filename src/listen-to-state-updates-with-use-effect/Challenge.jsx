@@ -1,3 +1,5 @@
+// Challenge: one useEffect is unnecessary. Get rid of it.
+
 import { useEffect, useState } from "react";
 
 export function RedditPosts() {
@@ -19,10 +21,13 @@ export function RedditPosts() {
   }, [data]);
 
   return (
-    <div>
-      {posts.map((post) => (
-        <div key={post.id}>{post.title}</div>
-      ))}
-    </div>
+    <>
+      <h3>Most popular Reddit posts in r/javascript</h3>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </>
   );
 }

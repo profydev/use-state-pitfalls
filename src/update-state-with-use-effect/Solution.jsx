@@ -1,54 +1,58 @@
-import { useState, useMemo } from "react";
+// Solution: "filteredItems" can be derived from "items"
+// and "filter". This makes the useEffect obsolete.
 
-export function DuplicateState() {
-  const [selectedItemId, setSelectedItemId] = useState();
-  const selectedItem = items.find(({ id }) => id === selectedItemId);
+import { useState } from "react";
 
-  // Alternatively we can useMemo to memoize the calculation result.
-  // This should only be done if the calculation is very expensive though.
-  // const selectedItem = useMemo(
-  //   () => items.find(({ id }) => id === selectedItemId),
-  //   [items, selectedItemId]
-  // );
-
-  const onClickItem = (id) => {
-    setSelectedItemId(id);
-  };
+function ListWithFilter({ items }) {
+  const [filter, setFilter] = useState("TODO");
+  const filteredItems = items.filter(({ status }) => status === filter);
 
   return (
     <>
+      <select
+        value={filter}
+        onChange={(event) => setFilter(event.target.value)}
+      >
+        <option value="TODO">TODO</option>
+        <option value="DONE">DONE</option>
+      </select>
       <ul>
-        {items.map(({ id, text }) => (
-          <li key={id}>
-            <button onClick={() => onClickItem(id)}>Open</button>
-            {text}
-          </li>
+        {filteredItems.map(({ id, text }) => (
+          <li key={id}>{text}</li>
         ))}
       </ul>
-      {selectedItem && <div>Selected item: {JSON.stringify(selectedItem)}</div>}
     </>
   );
+}
+
+export function App() {
+  return <ListWithFilter items={items} />;
 }
 
 const items = [
   {
     id: "item-1",
     text: "Item 1",
+    status: "TODO",
   },
   {
     id: "item-2",
     text: "Item 2",
+    status: "TODO",
   },
   {
     id: "item-3",
     text: "Item 3",
+    status: "DONE",
   },
   {
     id: "item-4",
     text: "Item 4",
+    status: "TODO",
   },
   {
     id: "item-5",
     text: "Item 5",
+    status: "DONE",
   },
 ];

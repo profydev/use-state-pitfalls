@@ -1,3 +1,7 @@
+// Solution: By updating both states together in a reducer
+// we can easily spot when we forget to update one of the
+// variables. And that was the cause for the bug.
+
 import { useReducer } from "react";
 
 function reducer(state, action) {

@@ -1,3 +1,6 @@
+// Solution: We can transform the data directly and remove
+// the "data" state. This makes the second useEffect obsolete.
+
 import { useEffect, useState } from "react";
 
 export function RedditPosts() {
@@ -14,10 +17,13 @@ export function RedditPosts() {
   }, []);
 
   return (
-    <div>
-      {posts.map((post) => (
-        <div key={post.id}>{post.title}</div>
-      ))}
-    </div>
+    <>
+      <h3>Most popular Reddit posts in r/javascript</h3>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </>
   );
 }

@@ -1,3 +1,8 @@
+// Challenge: Both states are always updated together. Refactor
+// this code to decrease the risk of contradicting state.
+// In fact, this code contains a bug leading to contradicting
+// state. Can you find and fix it?
+
 import { useState } from "react";
 
 export function ListWithUndo() {
@@ -15,7 +20,6 @@ export function ListWithUndo() {
       .concat(lastRemovedRow)
       .sort((a, b) => a.id - b.id);
     setRows(restoredRows);
-    setRemovedRows(removedRows.slice(0, -1));
   };
 
   return (

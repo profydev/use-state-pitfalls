@@ -1,4 +1,6 @@
-// this code was taken from the React docs
+// Challenge: flatten the state to make it easier to update it
+//
+// Note: this code was taken from the React docs
 // https://beta.reactjs.org/learn/choosing-the-state-structure#avoid-deeply-nested-state
 
 import { useState } from "react";

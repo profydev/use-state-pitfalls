@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 
-export function ListWithSelectableItems() {
+function ListWithSelectableItems() {
   const [checkedIds, setCheckedIds] = useState([]);
 
   const handleChange = (id) => {
@@ -49,6 +49,10 @@ export function ListWithSelectableItems() {
       </ul>
     </>
   );
+}
+
+export function App() {
+  return <ListWithSelectableItems items={items} />;
 }
 
 const items = [
